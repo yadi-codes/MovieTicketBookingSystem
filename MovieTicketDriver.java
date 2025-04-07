@@ -10,7 +10,7 @@ public class MovieTicketDriver {
         do {
             System.out.println("=== Movie Ticket Booking System ===");
             System.out.println("1. Add Movie");
-            System.out.println("2. View Movies (Coming Soon)");
+            System.out.println("2. View Movies");
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
@@ -23,9 +23,10 @@ public class MovieTicketDriver {
                     break;
 
                 case 2:
-                    System.out.println("Feature not implemented yet!");
+                    admin.viewMovies();
                     System.out.println();
                     break;
+                
 
                 case 3:
                     System.out.println("Exiting... Goodbye!");

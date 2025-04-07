@@ -1,4 +1,8 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.util.Scanner;
+import java.sql.Statement;
 
 public class Admin {
     private Scanner sc;
@@ -32,7 +36,28 @@ public class Admin {
         System.out.println("✅ Movie added successfully!\n");
     }
 
-    public void selectMovies() {
-        // coming soon :)
+    public void viewMovies() {
+    System.out.println("=== Available Movies ===");
+    try {
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/movie_ticket", "root", "ponnarukannan");
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM movies");
+
+        while (rs.next()) {
+            System.out.println("🎭 Theater: " + rs.getString("theatrename"));
+            System.out.println("🎬 Movie: " + rs.getString("moviename"));
+            System.out.println("🕒 Show Time: " + rs.getString("showtime"));
+            System.out.println("💺 Seats: " + rs.getInt("totalseats"));
+            System.out.println("💵 Price: ₹" + rs.getInt("price"));
+            System.out.println("------------------------------");
+        }
+
+        rs.close();
+        stmt.close();
+        conn.close();
+    } catch (Exception e) {
+        System.out.println("❌ Error retrieving movies: " + e.getMessage());
     }
+}
+
 }
