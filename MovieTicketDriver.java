@@ -1,24 +1,43 @@
-class User{
-    String name,password, address, phone;
-
-    void buyTicket(){}
-    void showTicket(){}
-    void cancelTicket(){}
-    void logout(){}
-}
-
-
-public class Admin extends User {
-
-    void addMovies(){}
-    void selectMovies(){}
-}
-
-
-
+import java.util.Scanner;
 
 public class MovieTicketDriver {
+
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+        Admin admin = new Admin(scanner);
+
+        int choice;
+        do {
+            System.out.println("=== Movie Ticket Booking System ===");
+            System.out.println("1. Add Movie");
+            System.out.println("2. View Movies (Coming Soon)");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // clear newline
+
+            switch (choice) {
+                case 1:
+                    admin.addMovies();
+                    System.out.println();
+                    break;
+
+                case 2:
+                    System.out.println("Feature not implemented yet!");
+                    System.out.println();
+                    break;
+
+                case 3:
+                    System.out.println("Exiting... Goodbye!");
+                    System.out.println();
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Try again.");
+                    System.out.println();
+            }
+        } while (choice != 3);
+
+        scanner.close();
     }
 }
