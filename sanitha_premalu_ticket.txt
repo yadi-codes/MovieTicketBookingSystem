@@ -1,0 +1,8 @@
+🎟️ --- TICKET --- 🎟️
+User: sanitha
+Movie: premalu
+Theatre: imax
+Show Time: 12:30
+Seats: A3, A5, A6
+Total Price: ₹810
+----------------------

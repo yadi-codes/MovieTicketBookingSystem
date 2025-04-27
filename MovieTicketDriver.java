@@ -1,3 +1,4 @@
+import java.sql.Connection;
 import java.util.Scanner;
 
 public class MovieTicketDriver {
@@ -5,6 +6,7 @@ public class MovieTicketDriver {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         Admin admin = new Admin(scanner);
+        ViewMovie viewMovie = new ViewMovie(); 
 
         int choice;
         do {

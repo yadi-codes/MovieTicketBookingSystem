@@ -1,0 +1,8 @@
+🎟️ --- TICKET --- 🎟️
+User: aaditya
+Movie: interstellar
+Theatre: imax
+Show Time: 02:30
+Seats: A1-A2
+Total Price: ₹400
+----------------------
